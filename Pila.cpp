@@ -11,7 +11,7 @@ void Pila::agregar(int valor) {
 		cabeza = nuevo;
 	}
 	else {//si ya tiene al menos un valor la pila
-		cout << "agregando un elemento que NO es el primer elemento" << endl;
+		
 		nuevo->sig = cabeza;
 		cabeza = nuevo;
 	}
