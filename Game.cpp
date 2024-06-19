@@ -1,5 +1,6 @@
 #include "Game.h"
 
+
 Game::Game() {
 }
 
@@ -21,11 +22,19 @@ Game::Game(int ancho_vent,int alto_vent, String nombre_vent) {
 	timer = new Timer(30,600.0,40.0);
 	player = new Player("assets/Juego2D_2.png",Vector2i(0,64), Vector2i(32, 32), Vector2f(450, 492));
 	enemy = new Enemy("assets/Juego2D_2.png", Vector2i(0,32), Vector2i(32, 32), Vector2f(450, 43));
+	pila = new Pila;
+	pila->agregar(5);
+	pila->agregar(18);
+	pila->agregar(3);
+	pila->mostrar();
+	pila->borrar();
+	pila->mostrar();
+
 
 	platform_current = 0;
 	platforms_pos[0]= 492;
-	platforms_pos[1] = 417;
-	platforms_pos[2] = 343;
+	platforms_pos[1] = 418;
+	platforms_pos[2] = 344;
 	platforms_pos[3] = 266;
 	platforms_pos[4] = 193;
 	platforms_pos[5] = 120;
@@ -52,6 +61,7 @@ void Game::draw_game() {
 	w->draw(timer->get_text());
 	w->display();
 }
+
 
 void Game::process_event() {
 	while (w->pollEvent(*e)) {

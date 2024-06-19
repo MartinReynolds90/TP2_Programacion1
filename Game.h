@@ -4,6 +4,9 @@
 #include "Enemy.h"
 #include "Timer.h"
 #include "iostream"
+#include "stdlib.h"
+#include "Pila.h"
+
 
 using namespace sf;
 using namespace std;
@@ -26,6 +29,7 @@ private:
   	int platform_current; //PLATAFORMA ACTUAL
 
 	Enemy* enemy;
+	Pila* pila;
 
 
 public:

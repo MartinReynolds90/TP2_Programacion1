@@ -133,12 +133,16 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Nodo.cpp" />
+    <ClCompile Include="Pila.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Nodo.h" />
+    <ClInclude Include="Pila.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
