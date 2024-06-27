@@ -1,45 +1,71 @@
 #include "Pila.h"
+#include "Game.h"
 
-Pila::Pila(){
+Pila::Pila() {
 	cabeza = NULL;
 }
 
-void Pila::agregar(int valor) {
+void Pila::agregar(Nodo *&cab, Enemy valor) {
+
 	Nodo* nuevo = new Nodo();
-	nuevo->info = valor;
-	if (cabeza == NULL) {//si es el primer valor que ingreso
-		cabeza = nuevo;
+	nuevo->dato = valor;
+	nuevo->siguiente = cab;
+	cab = nuevo;
+	cout << "se agrego un nodo correctamente" << endl;
+	
+}
+void Pila::borrar(Nodo*& cab, Nodo*& temp) {
+	if (cab != NULL) {
+		temp = cab;
+		cab = temp->siguiente;
+		delete temp;
+		cout << "se borro un elemento de la pila"<<endl;
 	}
-	else {//si ya tiene al menos un valor la pila
+	else {
+		cout << "la pila esta vacia";
+	}
+}
+
+
+
+
+/*void Pila::borrar(Nodo*& p, Enemy& d) {
+	Nodo* borrar = p;
+	d = borrar->dato;
+	p = borrar->siguiente;
+	delete borrar;
+	cout << "se borro un nodo correctamente" << endl;
+}*/
+
+
+/*bool Pila::vacia() {
+	bool vacia = false;
+	if (cabeza == NULL) {
+		vacia = true;
+	}
+	return vacia;
+}*/
+
+/*Sprite Pila::mostrar() {
+	Sprite sp;
+	if (cabeza == NULL) {
+		cout << "vacia" << endl;
+
+	}
+	else {
+		Nodo* reco = cabeza;
+		cout << "listado"<<endl;
 		
-		nuevo->sig = cabeza;
-		cabeza = nuevo;
-	}
-}
-
-void Pila::borrar(){
-	Nodo* borrar = cabeza;
-	if (cabeza == NULL) {
-		cout << "no hay nada que borrar"<<endl;
-	}
-	else {
-		cabeza = cabeza->sig;//se vuelve una posicion para atras y desprende (borra) la que estaba arriba
-		delete borrar;
-		cout << "borrando"<<endl;
-	}
-}
-
-void Pila::mostrar() {
-	if (cabeza == NULL) {
-		cout << "no hay nada que mostrar"<<endl;
-	}
-	else {
-		Nodo* recorrer = cabeza;//empieza en la parte superior
-		cout << "recorriendo la pila"<<endl;
-		while (recorrer != NULL) {
-			cout << recorrer->info << endl;
-			recorrer = recorrer->sig;
+		while (reco != NULL) {
+			sp =  reco->dato.get_sprite();
+			reco = reco->siguiente;
+			
 		}
+		
 	}
+	return sp;
 
-}
+}*/
+
+
+

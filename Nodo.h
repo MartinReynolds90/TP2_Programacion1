@@ -1,9 +1,12 @@
 #pragma once
-class Nodo
-{
+#include "iostream"
+#include "stdlib.h"
+#include "Enemy.h"
+
+class Nodo {
 public:
-	int info;
-	Nodo* sig;
+	Enemy dato;
+	Nodo* siguiente;
 
 };
 

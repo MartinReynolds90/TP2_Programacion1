@@ -44,3 +44,7 @@ void Player::animation_player(int x_initial, int y_initial, int size_frame, int 
 		clock_player->restart();
 	}
 }
+float Player::get_time() {//DEVUELVE EL TIEMPO EN FLOAT CON LOS DESCUENTOS POR PENALIZACION HECHOS.
+	*time_player = clock_player->getElapsedTime();
+	return time_player->asSeconds();
+}

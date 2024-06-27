@@ -22,6 +22,7 @@ public:
 	Vector2f get_position();
 	void set_position(Vector2f);
 	void animation_player(int,int,int,int);
+	float get_time();
 	
 };
 
