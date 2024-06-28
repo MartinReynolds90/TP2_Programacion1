@@ -6,6 +6,7 @@
 #include "iostream"
 #include "stdlib.h"
 #include "Pila.h"
+#include "Cola.h"
 
 
 using namespace sf;
@@ -25,6 +26,8 @@ private:
 
 	Sprite* sp_background;
 	Texture* tx_background;
+	Sprite* sp_puerta;
+	Texture* tx_puerta;
 	int fps = 60;
 
 	Timer* timer;
@@ -32,16 +35,39 @@ private:
 
 	Vector2f pos_leap; //POSICION SALTANDO
 	int platforms_pos[7];  //POSICIONES DE TODAS LAS PLATAFORMAS
-	int platform_current; //PLATAFORMA ACTUAL
+	int plataforma_actual; //PLATAFORMA ACTUAL
+	int plataforma_destino;
+	bool salto;
 
-	Enemy* enemy;
-	Enemy* enemi_uno;
-	Enemy* enemi_dos;
-	Enemy* enemi_tres;
-	Enemy* enemi_cuatro;
-	Enemy* enemi_cinco;
-	Enemy* enemi_seis;
-	Enemy* enemi_siete;
+	Enemy* tortuga_cero;
+	Enemy* tortuga_uno;
+	Enemy* tortuga_dos;
+	Enemy* tortuga_tres;
+
+	Enemy* tortuga_cuatro;
+	Enemy* tortuga_cinco;
+	Enemy* tortuga_seis;
+	Enemy* tortuga_siete;
+
+	Enemy* tortuga_ocho;
+	Enemy* tortuga_nueve;
+	Enemy* tortuga_diez;
+	Enemy* tortuga_once;
+
+	Enemy* tortuga_doce;
+	Enemy* tortuga_trece;
+	Enemy* tortuga_catorce;
+	Enemy* tortuga_quince;
+
+	Enemy* tortuga_dieciseis;
+	Enemy* tortuga_diecisiete;
+	Enemy* tortuga_dieciocho;
+	Enemy* tortuga_diecinueve;
+
+
+	Enemy* tortugas[20];
+	bool colision;
+	FloatRect* rect_player;
 
 
 	//int l_derecho;
@@ -65,6 +91,22 @@ private:
 	Pila* pila_cuatro;
 	Nodo* cabeza_cuatro;
 	Nodo* borrar_cuatro;
+
+	Pila* pila_cinco;
+	Nodo* cabeza_cinco;
+	Nodo* borrar_cinco;
+
+	Pila* pila_seis;
+	Nodo* cabeza_seis;
+	Nodo* borrar_seis;
+
+	Cola* cola_uno;
+	Nodo* frente_uno;
+	Nodo* fin_uno;
+
+	Cola* cola_dos;
+	Nodo* frente_dos;
+	Nodo* fin_dos;
 
 	//Nodo* recorrer;
 	int vel;

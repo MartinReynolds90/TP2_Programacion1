@@ -8,8 +8,6 @@ private:
 	Sprite* sp_enemy;
 	Texture* tx_enemy;
 	IntRect* rect_enemy;
-	Clock* clock_enemy;
-	Time* time_enemy;
 	int counter_frame;
 	int min;
 	int max;

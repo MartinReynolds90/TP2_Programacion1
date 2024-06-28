@@ -10,9 +10,6 @@ Enemy::Enemy() {
 	sp_enemy->setPosition(50,50);
 
 
-	clock_enemy = new Clock();
-	time_enemy = new Time();
-
 
 }
 Enemy::Enemy(String asset, Vector2f pos_enemy,int x_izquierda,int x_derecha) {
@@ -25,9 +22,6 @@ Enemy::Enemy(String asset, Vector2f pos_enemy,int x_izquierda,int x_derecha) {
 	sp_enemy->setTextureRect(*rect_enemy);
 	sp_enemy->setPosition(pos_enemy);
 
-	clock_enemy = new Clock();
-	time_enemy = new Time();
-	counter_frame = 0;
 	min = x_izquierda;
 	max = x_derecha;
 	//sp_enemy->setScale(sp_enemy->getScale().x * 2, sp_enemy->getScale().y * 2);
