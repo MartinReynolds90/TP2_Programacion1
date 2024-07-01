@@ -11,7 +11,6 @@ void Pila::agregar(Nodo *&cab, Enemy valor) {
 	nuevo->dato = valor;
 	nuevo->siguiente = cab;
 	cab = nuevo;
-	//cout << "se agrego un nodo correctamente" << endl;
 	
 }
 void Pila::borrar(Nodo*& cab, Nodo*& temp) {
@@ -19,7 +18,6 @@ void Pila::borrar(Nodo*& cab, Nodo*& temp) {
 		temp = cab;
 		cab = temp->siguiente;
 		delete temp;
-		//cout << "se borro un elemento de la pila"<<endl;
 	}
 	else {
 		cout << "la pila esta vacia";

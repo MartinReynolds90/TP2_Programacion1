@@ -15,11 +15,7 @@ public:
 	
 	Pila();
 	void agregar(Nodo *&,Enemy);
-	//void borrar(Nodo *& ,Enemy &);
 	void borrar(Nodo*&, Nodo*&);
-	//bool vacia();
-	//Sprite mostrar();
-
 
 };
 

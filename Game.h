@@ -22,8 +22,6 @@ private:
 	Clock* clock_player;
 	Time* time_player;
 
-
-
 	Sprite* sp_background;
 	Texture* tx_background;
 	Sprite* sp_puerta;
@@ -32,12 +30,11 @@ private:
 
 	Timer* timer;
 	Player* player;
+	int speed_player;
 
-	Vector2f pos_leap; //POSICION SALTANDO
 	int platforms_pos[7];  //POSICIONES DE TODAS LAS PLATAFORMAS
 	int plataforma_actual; //PLATAFORMA ACTUAL
-	int plataforma_destino;
-	bool salto;
+	int plataforma_destino;//PLATAFORMA SIGUIENTE, Y A LA QUE PUEDE SALTAR
 
 	Enemy* tortuga_cero;
 	Enemy* tortuga_uno;
@@ -65,14 +62,12 @@ private:
 	Enemy* tortuga_diecinueve;
 
 
-	Enemy* tortugas[20];
-	bool colision;
+	Enemy* tortugas[20];//ARREGLOS DE ENEMIGOS PARA DIBUJARLOS Y COMPROBAR COLISIONES
+	bool colision; // SE ACTIVA CUANDO HAY COLISION
 	FloatRect* rect_player;
 
 
-	//int l_derecho;
-	//int l_izquierdo;
-	int arr_pos_x[8];
+	int arr_pos_x[8];//ARREGLO QUE TIENE LAS 8 POSICIONES EN X QUE POSEEN TODAS LAS TORTUGAS EN SU ESTADO INICIAL, TAMBIEN SIVER COMO LIMITE AL CUAL LLEGAN LAS TORTUGAS DE LAS PILAS
 
 
 	Pila* pila;
@@ -108,13 +103,9 @@ private:
 	Nodo* frente_dos;
 	Nodo* fin_dos;
 
-	//Nodo* recorrer;
-	int vel;
-	bool vuelven;
-	//bool vuelven_dos;
 
-	//Enemy array[4];
-
+	int vel; //VELOCIDAD DE LAS TORTUGAS
+	bool vuelven; //DETERMINA QUE GRUPO DE PILAS ESTA ACTIVA, TRES PARA QUE LAS TORTUGAS VAYAN Y TRES PILAS PARA QUE LAS TORTUGAS VUELVAN
 
 public:
 	Game();

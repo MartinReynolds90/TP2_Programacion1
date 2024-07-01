@@ -4,6 +4,7 @@
 #include "stdlib.h"
 #include "Enemy.h"
 
+using namespace std;
 class Cola
 {
 private:
