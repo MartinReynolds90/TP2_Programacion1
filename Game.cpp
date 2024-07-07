@@ -31,8 +31,8 @@ Game::Game(int ancho_vent,int alto_vent, String nombre_vent) {
 	
 
 	arr_pos_x[0] = 11;//arreglo de posiciones que tomaran las tortugas en su estadio inicial
-	arr_pos_x[1] = 42;
-	arr_pos_x[2] = 74;
+	arr_pos_x[1] = 42;//TAMBIEN SE USAN PARA ESTABLECER LOS LIMITES DE DESPLAZAMIENTO DE LAS TORTUGAS 
+	arr_pos_x[2] = 74;//DANDOLE UN X MINIMO Y UN X MAXIMO
 	arr_pos_x[3] = 106;
 	arr_pos_x[4] = 664;
 	arr_pos_x[5] = 696;
@@ -40,7 +40,7 @@ Game::Game(int ancho_vent,int alto_vent, String nombre_vent) {
 	arr_pos_x[7] = 760;
 
 
-
+	//LOS PARAMETROS QUE RECIBE EL CONSTRUCTOR DE LAS TORTUGAS SON: EL ARCHIVO DEL CUAL SACA EL SPRITE,UN VECTOR2F CON LA POSICION INICIAL EN PANTALLA Y DOS ENTEROS QUE ESTABLECEN LOS LIMITES EN X A LOS QUE PUEDE LEGAR CADA TORTUGA
 	tortuga_cero = new Enemy("assets/shell_rojo.png", Vector2f(arr_pos_x[0], 347), arr_pos_x[0], arr_pos_x[4]);
 	tortuga_uno = new Enemy("assets/shell_amarillo.png", Vector2f(arr_pos_x[1],347 ),arr_pos_x[1], arr_pos_x[5]);
 	tortuga_dos = new Enemy("assets/shell_azul.png", Vector2f(arr_pos_x[2],347 ), arr_pos_x[2], arr_pos_x[6]);
@@ -164,7 +164,7 @@ Game::Game(int ancho_vent,int alto_vent, String nombre_vent) {
 
 void Game::game_loop() {
 	while (w->isOpen()) {
-		timer->actualizar_temp();
+		timer->actualizar_temp();//ACTUALIZA EL TEMPORIZADOR
 		*rect_player = player->get_sprite().getGlobalBounds();//actualiza el globalBound del personaje en todo momento
 		if (player->get_position().y < plataforma_destino) {//que caiga el personaje si no estoy presionando ninguna tecla
 			player->set_position(Vector2f(player->get_position().x, player->get_position().y + 1));
@@ -173,16 +173,16 @@ void Game::game_loop() {
 			plataforma_actual = plataforma_actual - 74;
 			plataforma_destino = plataforma_destino - 74;
 		}
-		if (rect_player->intersects(sp_puerta->getGlobalBounds())) {
-			cout << "Victoria========================================" << endl;
+		if (rect_player->intersects(sp_puerta->getGlobalBounds())) {//SI COLISIONA CON LA PUERTA GANA
+			cout << "//////////////////////////// GANASTE //////////////////////////////" << endl;
 		}
-		if ((30- timer->get_time()) <= 0.0) {
+		if ((30- timer->get_time()) <= 0.0) {//SI PASARON LOS 30 SEG LE SETEO VELOCIDAD CERO AL JUGADOR
 			speed_player = 0;
-			cout << "Perdiste=================================" << endl;
+			cout << "============================ PERDISTE ============================" << endl;
 		}
 		
 		//////////////COLISION CON TORTUGAS////////////////////////////////
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 20; i++) { 
 			FloatRect rect_tortugas = tortugas[i]->get_sprite().getGlobalBounds();
 			if (rect_player->intersects(rect_tortugas)) {
 				colision = true;
@@ -196,8 +196,9 @@ void Game::game_loop() {
 		}
 
 		
-		if (vuelven == true) {
+		if (vuelven == true) {//ACA ENTRA CUANDO LAS 4 TORTUGAS LLEGARON AL OTRO EXTREMO DE LA PANTALLA, Y HACE QUE VUELVAN. LA VARIABLE vel CAMBIA SU SIGNO Y SE PASA COMO VELOCIDAD DE LAS TORTUGAS  
 			//////////////////////////////PILA///////////////////////////////////////////////////////////
+
 			if (cabeza_dos != NULL) {//ESTA PILA SIRVE COMO GUIA PARA LAS OTRAS Y SE ACTIVA CUANDO SE VACIA LA CABEZA SECUNDARIA(cabeza)
 				if (cabeza_dos->dato.get_position().x >= cabeza_dos->dato.get_min_x()) {//MIENTRAS NO SE SALGA DEL LIMITE IZQUIERDO QUE LE PUSE A LA TORTUGA EN EL CONSTRUCTOR
 			 		cabeza_dos->dato.caminar(-vel);    //LLAMO A LA FUNCION CAMINAR DE LAS TORTUGAS DE LAS TRES PILAS, AL LLEGAR A SU LIMITE ESTABLECIDO, SE BORRA LA CABEZA Y LA QUE SIGUE TOMA EL LUGAR
@@ -213,26 +214,27 @@ void Game::game_loop() {
 					pila_seis->borrar(*&cabeza_seis, *&borrar_seis);
 				}
 			}
-			else {//DESPUES DE QUE TODAS LAS TORTUGAS DE LAS TRES PILAS LLEGARON AL EXTREMO OPUESTO DE LA PANTALLA Y SE CARGARON EN UNA PILA SECUNDARIA 
-				vuelven = false;// VUELVEN CAMBIA SU VALOR Y LAS PILAS SECUNDARIAS SE ACTIVAN (pila,pila_tres,pila_cinco)
+			else {//DESPUES DE QUE TODAS LAS TORTUGAS DE LAS TRES PILAS (pila_dos, pila_cuatro, pila_seis)LLEGARON AL EXTREMO OPUESTO DE LA PANTALLA Y SE CARGARON EN 3 PILAS SECUNDARIAS 
+				vuelven = false;// VUELVEN CAMBIA SU VALOR A FALSE Y LAS PILAS SECUNDARIAS SE ACTIVAN (pila,pila_tres,pila_cinco)
 			}
 
 		}
 		else if (vuelven == false) {
-			if (frente_uno != NULL) {//MOVIMIENTO DE LOS ELEMENTOS DE LAS COLAS
-				if (frente_uno->dato.get_position().x >= frente_uno->dato.get_min_x()) {
-					frente_uno->dato.caminar(vel);
-					//cout << "POSICION EN X DEL DATO, DEL NODO FRENTE  "<<frente_uno->dato.get_position().x << endl;
+			if (!cola_uno->cola_vacia()) {//MOVIMIENTO DE LOS ELEMENTOS DE LAS COLAS
+				Enemy borrado = cola_uno->borrar();
+				cout << borrado.get_position().x;
+				if (borrado.get_position().x >= borrado.get_min_x()) {
+					borrado.caminar(vel);
+					cout << "POSICION EN X DEL DATO, DEL NODO FRENTE  "<<borrado.get_position().x << endl;
 				}
 				else {//si llega al extremo opuesto, la borro del frente y la agrego en el fin
-					cola_uno->agregar(*&frente_uno, *&fin_uno, frente_uno->dato);
-					cola_uno->borrar(*&frente_uno, *&fin_uno, *&frente_uno->dato);
-					
+					cola_uno->agregar(*&frente_uno, *&fin_uno, borrado);
 				}
 
 			}
 
 			///////////////////////////////pilas volviendo////////////////////////////////
+
 			if (cabeza != NULL) {//ESTA PILA SE RECORRE CUANDO LA PRIMERA(cabeza_dos) SE VACIA
 				if (cabeza->dato.get_position().x <= cabeza->dato.get_max_x()) {//MIENTRAS NO SE SALGA DEL LIMITE DERECHO QUE SE LE DIO A CADA TORTUGA EN EL CONSTRUCTOR
 					cabeza->dato.caminar(vel);                          //CAMINAN HASTA LLEGAR A SU LIMITE DERECHO

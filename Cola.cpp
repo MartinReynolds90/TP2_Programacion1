@@ -10,7 +10,7 @@ void Cola::agregar(Nodo*& frente,Nodo*& fin,Enemy tort) {
 	nuevo_nodo->dato = tort;
 	nuevo_nodo->siguiente = NULL;
 
-	if (cola_vacia(frente)) {
+	if (cola_vacia()) {
 		frente = nuevo_nodo;
 	}
 	else {
@@ -19,12 +19,11 @@ void Cola::agregar(Nodo*& frente,Nodo*& fin,Enemy tort) {
 	fin = nuevo_nodo;
 }
 
-bool Cola::cola_vacia(Nodo*& frente) {
+bool Cola::cola_vacia() {
 	return (frente == NULL) ? true : false;
 }
-
-void Cola::borrar(Nodo*& frente, Nodo*& fin, Enemy &eliminar) {
-	eliminar = frente->dato;
+Enemy Cola::borrar() {
+	Enemy eliminado = frente->dato;
 	Nodo* aux = frente;
 
 	if (frente == fin) {
@@ -32,7 +31,9 @@ void Cola::borrar(Nodo*& frente, Nodo*& fin, Enemy &eliminar) {
 		fin = NULL;
 	}
 	else {
-		frente = frente->siguiente;
+		frente = aux->siguiente;
 	}
 	delete aux;
+
+	return eliminado;
 }

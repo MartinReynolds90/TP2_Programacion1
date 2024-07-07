@@ -13,7 +13,7 @@ private:
 public:
 	Cola();
 	void agregar(Nodo*&, Nodo*&, Enemy);
-	void borrar(Nodo*& , Nodo*& , Enemy& );
-	bool cola_vacia(Nodo*&);
+	Enemy borrar( );
+	bool cola_vacia();
 };
 

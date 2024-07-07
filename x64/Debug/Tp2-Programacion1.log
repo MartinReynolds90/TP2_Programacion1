@@ -1,0 +1,103 @@
+﻿  Game.cpp
+C:\Users\Martin\Desktop\Prog1 TP2\Tp2-Programacion1\Game.cpp(9,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\Martin\Desktop\Prog1 TP2\Tp2-Programacion1\Game.cpp(44,72): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\Martin\Desktop\Prog1 TP2\Tp2-Programacion1\Game.cpp(45,75): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\Martin\Desktop\Prog1 TP2\Tp2-Programacion1\Game.cpp(46,71): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\Martin\Desktop\Prog1 TP2\Tp2-Programacion1\Game.cpp(47,73): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\Martin\Desktop\Prog1 TP2\Tp2-Programacion1\Game.cpp(49,74): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\Martin\Desktop\Prog1 TP2\Tp2-Programacion1\Game.cpp(50,77): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\Martin\Desktop\Prog1 TP2\Tp2-Programacion1\Game.cpp(51,73): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\Martin\Desktop\Prog1 TP2\Tp2-Programacion1\Game.cpp(52,74): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\Martin\Desktop\Prog1 TP2\Tp2-Programacion1\Game.cpp(54,72): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\Martin\Desktop\Prog1 TP2\Tp2-Programacion1\Game.cpp(55,77): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\Martin\Desktop\Prog1 TP2\Tp2-Programacion1\Game.cpp(56,72): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\Martin\Desktop\Prog1 TP2\Tp2-Programacion1\Game.cpp(57,73): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\Martin\Desktop\Prog1 TP2\Tp2-Programacion1\Game.cpp(59,72): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\Martin\Desktop\Prog1 TP2\Tp2-Programacion1\Game.cpp(60,77): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\Martin\Desktop\Prog1 TP2\Tp2-Programacion1\Game.cpp(61,75): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\Martin\Desktop\Prog1 TP2\Tp2-Programacion1\Game.cpp(62,75): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\Martin\Desktop\Prog1 TP2\Tp2-Programacion1\Game.cpp(64,77): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\Martin\Desktop\Prog1 TP2\Tp2-Programacion1\Game.cpp(65,81): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\Martin\Desktop\Prog1 TP2\Tp2-Programacion1\Game.cpp(66,77): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\Martin\Desktop\Prog1 TP2\Tp2-Programacion1\Game.cpp(67,79): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+  Tp2-Programacion1.vcxproj -> C:\Users\Martin\Desktop\Prog1 TP2\Tp2-Programacion1\x64\Debug\Tp2-Programacion1.exe
